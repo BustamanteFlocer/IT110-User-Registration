@@ -14,7 +14,5 @@ $yearlevel  = $_POST['userYearlevel'];
 $sql = "UPDATE user SET idnumber='$idNumber', firstname='$firstName', lastname='$lastName', gender='$gender', 
 bday='$bday', program='$program', yearlevel='$yearlevel' WHERE id = '".$id."'";
 $statement = $pdo->query($sql);
-$users = $statement->fetchAll(PDO::FETCH_ASSOC);
-echo json_encode($users);
 	
 ?>
