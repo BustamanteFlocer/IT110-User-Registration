@@ -82,7 +82,7 @@ CancelButton.onclick = function() {
   modal.style.display = "none";
 }
 
-//-----When The Update Button is Clicked display user data to be updated in modal-------------
+//-----When the 'Update' button is clicked, display user data to be updated in modal and save the inputs-------------
 
 $(document).on("click",".userUpdate",function(){
 modal.style.display = "block";
@@ -105,7 +105,9 @@ $('input[id=edit_yearlevel]').val(uYl);
 });
 
 
-//-----------When the 'Save Changes' button is clicked save the updated user data-------------
+
+//-----------When the 'Save Changes' button is clicked, this function will connect to the php UPDATE query in update.php file-------------
+
 $(document).on("click","#editUser",function(){
 	
 	var dataform =$('#edituserForm');
