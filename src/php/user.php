@@ -22,6 +22,9 @@
 			$pdo->rollback();
 		}
 	}
+	    
+
+
 	else if($_SERVER['REQUEST_METHOD'] === 'GET' && $_GET['action']=="getusers"){
 		$sql = "SELECT * FROM user";
 		$statement = $pdo->query($sql);

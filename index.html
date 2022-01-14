@@ -10,6 +10,8 @@
 </head>
 <body>
 
+		<!-- User Registratin Form--> 
+
 	<div class="container mt-3 d-flex justify-content-center">
 		<div class="card" style="width: 30rem;">
 		  <div class="card-body">
@@ -46,10 +48,16 @@
 			    <input max="5" min="1" required type="number" class="form-control" id="yearlevel">
 			  </div>
 			  <button id="register" type="submit" class="btn btn-primary">Register</button>
+
 			</form>	  	
 		  </div>
 		</div>
 	</div>
+
+	<!-- End of User Registration Form--> 
+
+
+	<!-- Table to Display Users Data-->
 
 	<div class="container">
 		<table class="table" id="usertable">
@@ -63,16 +71,75 @@
 		      <th scope="col">Birthday</th>
 		      <th scope="col">Program</th>
 		      <th scope="col">Year Level</th>
+		      <th scope="col" colspan="2">Action</th>
 		    </tr>
 		  </thead>
 		  <tbody>
 		  </tbody>
 		</table>
 	</div>
+     
+     <!-- End of Table that Display Users Data-->
+
+
+	<!-- User Update  Modal Form-->
+
+<div id= "myModal" class="modal">
+	<div class="modal-content">
+	<div class="container mt-3 d-flex justify-content-center">
+		<div class="card" style="width: 30rem; height: 50rem; ">
+         <h3><center>Update User</center></h3>
+		  <div class="card-body">
+			<form id="edituserForm" name="edituserForm">
+				<input type="hidden" id="idofuser">
+			  <div class="mb-3">
+			  	  <label for="edit_idnumber" class="form-label">ID Number</label>
+			    <input pattern="\d{3}-\d{5}" maxlength="9" minlength="9" type="text" class="form-control" id="edit_idnumber">
+			  </div>
+			    <div class="mb-3">
+			    <label for="edit_firstname" class="form-label">Firstname</label>
+			    <input required type="text" class="form-control" id="edit_firstname">
+			  </div>
+			  <div class="mb-3">
+			    <label for="edit_lastname" class="form-label">Lastname</label>
+			    <input required type="text" class="form-control" id="edit_lastname">
+			  </div>
+			  <div class="mb-3">
+			    <label for="edit_gender" class="form-label">Gender</label>
+				<select required class="form-select" id="edit_gender" aria-label="Default select example">
+				  <option value="0">Female</option>
+				  <option value="1">Male</option>
+				</select>
+				</div>
+			  <div class="mb-3">
+			    <label for="edit_bday" class="form-label">Birthday</label>
+			    <input required type="date" class="form-control" id="edit_bday">
+			  </div>
+			  <div class="mb-3">
+			    <label for="edit_program" class="form-label">Program</label>
+			    <input required type="text" class="form-control" id="edit_program">
+			  </div>
+			  <div class="mb-3">
+			    <label for="edit_yearlevel" class="form-label">Year Level</label>
+			    <input max="5" min="1" required type="number" class="form-control" id="edit_yearlevel">
+			  </div>
+				<button id="editUser" class="btn btn-success" >Save Changes</button>
+			    <button class="close" class="btn btn-success" >Cancel</button>
+			</form>	  	
+		  </div>
+		</div>
+	</div>
+</div>
+</div>
+
+	<!-- End of User Update  Modal Form-->
+
 </body>
+
 <style type="text/css">
 	input:invalid, select:invalid{
 		border: 2px solid red;
 	}
 </style>
+
 </html>
