@@ -128,8 +128,7 @@ $(document).on("click","#editUser",function(){
 				data:{userID:userID, userIDnumber:userIDnumber, userFirstname:userFirstname,
 					userLastname:userLastname, userGender:userGender, userBday:userBday,
 					userProgram:userProgram, userYearlevel:userYearlevel },
-				success:function(){
-				},
+				
 			});
 	    }
 	});
@@ -148,8 +147,7 @@ $(document).on("click","#editUser",function(){
 			$.ajax({
 				type:"POST",
 				url:"src/php/delete.php",
-				success:function(){
-				},
+
 			});
 		}
 	});
