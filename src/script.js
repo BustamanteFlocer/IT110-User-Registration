@@ -71,39 +71,39 @@ $(document).ready(function(){
 
 /*----------User Update-----------*/
 
-// Get the modal
-modal = document.getElementById("myModal");
-// Get the button that opens the modal
-btn = document.getElementById("myBtn");
-// This closes the modal
-CancelButton = document.getElementsByClassName("close")[0];
-// When the user clicks on Cancel (x), close the modal
-CancelButton.onclick = function() {
-  modal.style.display = "none";
-}
+	// Get the modal
+	modal = document.getElementById("myModal");
+	// Get the button that opens the modal
+	btn = document.getElementById("myBtn");
+	// This closes the modal
+	CancelButton = document.getElementsByClassName("close")[0];
+	// When the user clicks on Cancel (x), close the modal
+	CancelButton.onclick = function() {
+	  modal.style.display = "none";
+	}
 
 
 //-----When The Update Button is Clicked display user data to be updated in modal and save the inputs-------------
 
-$(document).on("click",".userUpdate",function(){
-modal.style.display = "block";
-var uID = $(this).attr('uID');
-var ids = $(this).attr("id");
-var uFn = $(this).attr('uFn');
-var uLn = $(this).attr("uLn");
-var uGdr = $(this).attr('uGdr');
-var uBd = $(this).attr("uBd");
-var uPg = $(this).attr('uPg');
-var uYl = $(this).attr("uYl");
-$('input[id=idofuser]').val(ids);
-$('input[id=edit_idnumber]').val(uID);
-$('input[id=edit_firstname]').val(uFn);
-$('input[id=edit_lastname]').val(uLn);
-$('input[id=edit_gender]').val(uGdr);
-$('input[id=edit_bday]').val(uBd);
-$('input[id=edit_program]').val(uPg);
-$('input[id=edit_yearlevel]').val(uYl);
-});
+	$(document).on("click",".userUpdate",function(){
+	modal.style.display = "block";
+	var uID = $(this).attr('uID');
+	var ids = $(this).attr("id");
+	var uFn = $(this).attr('uFn');
+	var uLn = $(this).attr("uLn");
+	var uGdr = $(this).attr('uGdr');
+	var uBd = $(this).attr("uBd");
+	var uPg = $(this).attr('uPg');
+	var uYl = $(this).attr("uYl");
+	$('input[id=idofuser]').val(ids);
+	$('input[id=edit_idnumber]').val(uID);
+	$('input[id=edit_firstname]').val(uFn);
+	$('input[id=edit_lastname]').val(uLn);
+	$('input[id=edit_gender]').val(uGdr);
+	$('input[id=edit_bday]').val(uBd);
+	$('input[id=edit_program]').val(uPg);
+	$('input[id=edit_yearlevel]').val(uYl);
+	});
 
 //-----------When the 'Save Changes' button is clicked this function will connect to the php UPDATE query in update.php file-------------
 
