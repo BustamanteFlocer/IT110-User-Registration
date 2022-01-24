@@ -22,8 +22,32 @@
 			$pdo->rollback();
 		}
 	}
-	    
 
+	// Update the data of the selected user from the database
+
+	else if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] == "user_update"){
+	        
+	$id  = $_POST['userID'];
+	$idNumber  = $_POST['userIDnumber'];
+	$firstName  = $_POST['userFirstname'];
+	$lastName  = $_POST['userLastname'];
+	$gender  = $_POST['userGender'];
+	$bday  = $_POST['userBday'];
+	$program  = $_POST['userProgram'];
+	$yearlevel  = $_POST['userYearlevel'];
+
+	$sql = "UPDATE user SET idnumber='$idNumber', firstname='$firstName', lastname='$lastName', gender='$gender', 
+	bday='$bday', program='$program', yearlevel='$yearlevel' WHERE id = '".$id."'";
+	$statement = $pdo->query($sql);
+}   
+
+	// Delete selected user from the database
+
+	else if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] == "delete_user"){
+	$sql = 'DELETE FROM user
+	WHERE id = :user_id';
+	$statement = $pdo->query($sql);
+}
 
 	else if($_SERVER['REQUEST_METHOD'] === 'GET' && $_GET['action']=="getusers"){
 		$sql = "SELECT * FROM user";
