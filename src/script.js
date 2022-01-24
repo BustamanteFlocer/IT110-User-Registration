@@ -82,7 +82,8 @@ CancelButton.onclick = function() {
   modal.style.display = "none";
 }
 
-//-----When the 'Update' button is clicked, display user data to be updated in modal and save the inputs-------------
+
+//-----When The Update Button is Clicked display user data to be updated in modal and save the inputs-------------
 
 $(document).on("click",".userUpdate",function(){
 modal.style.display = "block";
@@ -104,9 +105,7 @@ $('input[id=edit_program]').val(uPg);
 $('input[id=edit_yearlevel]').val(uYl);
 });
 
-
-
-//-----------When the 'Save Changes' button is clicked, this function will connect to the php UPDATE query in update.php file-------------
+//-----------When the 'Save Changes' button is clicked this function will connect to the php UPDATE query in update.php file-------------
 
 $(document).on("click","#editUser",function(){
 	
@@ -124,11 +123,12 @@ $(document).on("click","#editUser",function(){
 			$.ajax({
 				dataType: 'json',
 				type:"POST",
-				url:"src/php/update.php",
-				data:{userID:userID, userIDnumber:userIDnumber, userFirstname:userFirstname,
+				
+				data:{action:"user_update", userID:userID, userIDnumber:userIDnumber, userFirstname:userFirstname,
 					userLastname:userLastname, userGender:userGender, userBday:userBday,
 					userProgram:userProgram, userYearlevel:userYearlevel },
-				
+				url:"src/php/user.php",
+
 			});
 	    }
 	});
@@ -146,8 +146,9 @@ $(document).on("click","#editUser",function(){
 			$(this).closest('tr').remove();
 			$.ajax({
 				type:"POST",
+				data:{action:"delete_user", user_id:id},
 				url:"src/php/delete.php",
-
+			
 			});
 		}
 	});
