@@ -41,11 +41,13 @@
 	$statement = $pdo->query($sql);
 }   
 
-	// Delete selected user from the database
-
 	else if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] == "delete_user"){
-	$sql = 'DELETE FROM user
-	WHERE id = :user_id';
+	
+	$id  = $_POST['user_id'];
+
+	// Delete selected user from the database
+	$sql = "DELETE FROM user WHERE id = '".$id."'";
+	$statement = $pdo->query($sql);
 	$statement = $pdo->query($sql);
 }
 
