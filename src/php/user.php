@@ -48,7 +48,7 @@
 	// Delete selected user from the database
 	$sql = "DELETE FROM user WHERE id = '".$id."'";
 	$statement = $pdo->query($sql);
-	$statement = $pdo->query($sql);
+	
 }
 
 	else if($_SERVER['REQUEST_METHOD'] === 'GET' && $_GET['action']=="getusers"){
