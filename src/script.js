@@ -147,7 +147,7 @@ $(document).on("click","#editUser",function(){
 			$.ajax({
 				type:"POST",
 				data:{action:"delete_user", user_id:id},
-				url:"src/php/delete.php",
+				url:"src/php/user.php",
 			
 			});
 		}
